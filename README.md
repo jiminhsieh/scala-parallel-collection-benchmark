@@ -1,18 +1,18 @@
-## Scala Parallel Collection Benchmark
+# Scala Parallel Collection Benchmark
 
 This version is rewrote from source code of [How big should a collection be to go parallel?](http://docs.scala-lang.org/overviews/parallel-collections/performance.html#how-big-should-a-collection-be-to-go-parallel) in Scala Language Doc with [sbt-jmh](https://github.com/ktoso/sbt-jmh).
 
-### Why I rewrite original source code? 
+## Why I rewrite original source code? 
 [Because of `scala.testing.Benchmark` is already deprecated](https://github.com/scala/docs.scala-lang/issues/752). I rewrote it with JMH, then we could get more accurate results. 
 
-Environment:
+## Environment:
 * CPU: E3-1231 v3 without hyper-threading and turbo boost
 * RAM: 16G, I allocated 8G for each benchmark.
 * OS: Debian 8 with limitation(2.5GHz) of CPU frequency.
 * JVM: Oracle 1.8.0_144-b01
 * Scala: 2.12.3
 
-Result:
+## Result:
 ```
 [info] MapBench.map           120000       N/A  thrpt   45    91.299 ±   1.214  ops/s
 [info] MapBench.map            15000       N/A  thrpt   45   702.102 ±   1.874  ops/s
