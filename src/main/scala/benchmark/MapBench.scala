@@ -1,4 +1,4 @@
-package bench
+package benchmark
 
 import org.openjdk.jmh.annotations._
 
@@ -7,20 +7,21 @@ import org.openjdk.jmh.annotations._
 @Warmup(iterations = 15)
 @Measurement(iterations = 15)
 @State(Scope.Benchmark)
-class VectorBench {
+class MapBench {
 
-  @Param(scala.Array("250000", "120000"))
+  @Param(scala.Array("120000", "15000"))
   var size: Int = _
 
-  var vector: Vector[Int] = _
+  var hashMap: collection.mutable.HashMap[Int, Int] = _
 
   @Setup(Level.Trial)
-  def init: Unit = {
-    vector = Vector((0 until size): _*)
+  def init = {
+    hashMap = collection.mutable.HashMap((0 until size) zip (0 until size): _*)
   }
 
   @Benchmark
-  def reduce: Unit = {
-    vector.reduce((a, b) ⇒ a + b)
+  def map = {
+    hashMap.map(kv => kv)
   }
+
 }
