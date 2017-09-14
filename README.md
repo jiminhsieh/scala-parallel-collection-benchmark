@@ -34,3 +34,6 @@ This version is rewrote from source code of [How big should a collection be to g
 
 References: 
 * [Original Markdown](https://github.com/scala/docs.scala-lang/blob/44840f5/_overviews/parallel-collections/performance.md#how-big-should-a-collection-be-to-go-parallel)
+* Comments from other peoples
+    * Performance of parallelism - [Java 8 Stream seems better than Scala parallel collection](https://github.com/scala/docs.scala-lang/issues/752#issuecomment-329127289).
+    * Change element type of collection - [Parallel collections are not specialized for primitive types](https://github.com/scala/docs.scala-lang/issues/752#issuecomment-329128517).
